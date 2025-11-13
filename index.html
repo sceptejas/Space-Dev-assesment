@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Contract DApp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Simple Contract DApp</h1>
+            
+            <div class="wallet-section">
+                <button id="connectWallet" class="btn btn-primary">Connect Wallet</button>
+                <div id="walletInfo" class="wallet-info hidden">
+                    <p>Connected: <span id="walletAddress"></span></p>
+                </div>
+            </div>
+
+            <div id="contractSection" class="contract-section hidden">
+                <!-- Read Contract Data -->
+                <div class="section">
+                    <h2>Read Contract</h2>
+                    <div class="read-group">
+                        <button class="btn btn-secondary" onclick="getName()">Get Name</button>
+                        <div id="nameOutput" class="output"></div>
+                    </div>
+                    <div class="read-group">
+                        <button class="btn btn-secondary" onclick="getBalance()">Get Balance</button>
+                        <div id="balanceOutput" class="output"></div>
+                    </div>
+                </div>
+
+                <!-- Update Name -->
+                <div class="section">
+                    <h2>Update Name</h2>
+                    <input type="text" id="nameInput" placeholder="Enter new name" class="input">
+                    <button class="btn btn-primary" onclick="updateName()">Update Name</button>
+                </div>
+
+                <!-- Stake ETH -->
+                <div class="section">
+                    <h2>Stake ETH</h2>
+                    <input type="number" id="stakeAmount" placeholder="Amount in ETH" step="0.001" class="input">
+                    <button class="btn btn-primary" onclick="stake()">Stake</button>
+                </div>
+
+                <!-- Withdraw -->
+                <div class="section">
+                    <h2>Withdraw</h2>
+                    <button class="btn btn-danger" onclick="withdraw()">Withdraw All</button>
+                </div>
+            </div>
+
+            <div id="status" class="status"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
